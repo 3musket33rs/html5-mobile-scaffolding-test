@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Page</title>
+  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+<link rel="stylesheet" href="http://dev.jtsage.com/cdn/datebox/1.1.0/jqm-datebox-1.1.0.min.css"  /> 
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="js/author-list.js"></script>
+<script src="js/author-edit.js"></script>
+<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+<script src="http://dev.jtsage.com/cdn/datebox/1.1.0/jqm-datebox-1.1.0.core.min.js"></script>
+<script src="http://dev.jtsage.com/cdn/datebox/1.1.0/jqm-datebox-1.1.0.mode.datebox.min.js"></script>
+
+</head>
+
+<body>
+	<section data-role="page" id="section-list-authors">
+	  <div data-role="header" data-position="fixed">
+	    
+        <h1>Author</h1>
+        
+        </div>	
+        
+        <div data-role="content" id="list-authors-parent">        
+        
+			<ul data-role="listview" data-inset="true" data-filter="true" id="list-authors">
+			</ul>
+		</div>
+        
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#section-show-author" data-transition="slide" data-role="button" data-icon="plus">Add</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	
+	<section data-role="page" id="section-show-author">
+		<div data-role="header" id="show-author" data-position="fixed">
+			<a href="#section-list-authors" data-transition="slide" data-icon="arrow-l">Cancel</a>
+			<h1>Author</h1>
+		</div>
+     <div id="form-update-author">
+        <ul data-role="listview" data-inset="true">
+          
+            <li data-role="fieldcontain">
+              
+              <label for="input-author-bithday">Bithday</label>
+              <input type="text" name="bithday" id="input-author-bithday" value="" data-role="datebox" data-options='{"mode":"datebox", "useNewStyle":true}' />
+              
+            </li>
+         
+            <li data-role="fieldcontain">
+              
+              <label for="input-author-firstname">Firstname</label>
+              <input type="text" name="firstname" id="input-author-firstname" value=""/>
+              
+            </li>
+         
+            <li data-role="fieldcontain">
+              
+              <label for="input-author-lastname">Lastname</label>
+              <input type="text" name="lastname" id="input-author-lastname" value=""/>
+              
+            </li>
+         
+        </ul>
+        
+		
+        <input type="hidden" name="id" id="input-author-id"/>
+        <input type="hidden" name="version" id="input-author-version"/>
+        <input type="hidden" name="class" id="input-author-class"/>
+    </div>
+    
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#section-list-authors" data-transition="slide" data-role="button" data-icon="delete" id="delete-author">Delete</a></li> 
+          <li><a href="#section-list-authors" data-transition="slide" data-icon="save" id="submit-author">Save</a></li>
+        </ul>
+      </div>
+    </div>
+	</section>
+</body>
+</html>

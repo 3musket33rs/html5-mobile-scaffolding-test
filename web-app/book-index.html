@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Page</title>
+  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+<link rel="stylesheet" href="http://dev.jtsage.com/cdn/datebox/1.1.0/jqm-datebox-1.1.0.min.css"  /> 
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="js/book-list.js"></script>
+<script src="js/book-edit.js"></script>
+<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+<script src="http://dev.jtsage.com/cdn/datebox/1.1.0/jqm-datebox-1.1.0.core.min.js"></script>
+<script src="http://dev.jtsage.com/cdn/datebox/1.1.0/jqm-datebox-1.1.0.mode.datebox.min.js"></script>
+
+</head>
+
+<body>
+	<section data-role="page" id="section-list-books">
+	  <div data-role="header" data-position="fixed">
+	    
+        <h1>Book</h1>
+        
+        </div>	
+        
+        <div data-role="content" id="list-books-parent">        
+        
+			<ul data-role="listview" data-inset="true" data-filter="true" id="list-books">
+			</ul>
+		</div>
+        
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#section-show-book" data-transition="slide" data-role="button" data-icon="plus">Add</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	
+	<section data-role="page" id="section-show-book">
+		<div data-role="header" id="show-book" data-position="fixed">
+			<a href="#section-list-books" data-transition="slide" data-icon="arrow-l">Cancel</a>
+			<h1>Book</h1>
+		</div>
+     <div id="form-update-book">
+        <ul data-role="listview" data-inset="true">
+          
+            <li data-role="fieldcontain">
+              
+                <div data-role="fieldcontain">
+				<label for="select-book-author" class="select">Choose a Author</label>
+				<select name="author" data-gorm-relation="many-to-one" id="select-book-author" data-native-menu="false">
+					<option value="0"></option>
+				</select>
+			    </div>
+			    
+            </li>
+         
+            <li data-role="fieldcontain">
+              
+              <label for="input-book-title">Title</label>
+              <input type="text" name="title" id="input-book-title" value=""/>
+              
+            </li>
+         
+        </ul>
+        
+		
+        <input type="hidden" name="id" id="input-book-id"/>
+        <input type="hidden" name="version" id="input-book-version"/>
+        <input type="hidden" name="class" id="input-book-class"/>
+    </div>
+    
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#section-list-books" data-transition="slide" data-role="button" data-icon="delete" id="delete-book">Delete</a></li> 
+          <li><a href="#section-list-books" data-transition="slide" data-icon="save" id="submit-book">Save</a></li>
+        </ul>
+      </div>
+    </div>
+	</section>
+</body>
+</html>
