@@ -11,8 +11,8 @@ BookList.prototype.get = function(index) {
 	return this.books[index];
 };
 
-serverUrl = 'http://localhost:8080/html5-mobile-scaffolding-test';
-//serverUrl = 'http://html5-mobile-scaffolding-test.cloudfoundry.com'	
+//serverUrl = 'http://localhost:8080/html5-mobile-scaffolding-test';
+serverUrl = 'http://html5-mobile-scaffolding-test.cloudfoundry.com'	
 
 
 $('#section-list-books').live('pageinit', function(e) {
