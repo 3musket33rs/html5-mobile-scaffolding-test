@@ -22,5 +22,6 @@ Add fields in Book: String title, Author author
 
 To run this sample taken from github
 ====================================	
+	
 	grails run-app
 
